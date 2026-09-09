@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#0c0e0f" media="(prefers-color-scheme: dark)" />
+    <meta name="theme-color" content="#f9fbfd" media="(prefers-color-scheme: light)" />
+    <title>Choose your AI subscription</title>
+    <script>
+      const savedTheme = localStorage.getItem("subscription-theme");
+      document.documentElement.dataset.theme =
+        savedTheme || (matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    </script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <button class="theme-toggle" type="button">
+      <span class="codicon theme-toggle__icon" aria-hidden="true"></span>
+      <span class="visually-hidden theme-toggle__label"></span>
+    </button>
+    <main class="subscription-panel" aria-labelledby="subscription-title">
+      <header class="intro">
+        <h1 id="subscription-title">Use your subscription</h1>
+        <p>Use the AI access you already have,<br />or none at all.</p>
+      </header>
+
+      <section class="carousel" aria-label="AI subscription providers" aria-roledescription="carousel">
+        <div class="carousel__viewport">
+          <div class="carousel__track">
+            <button class="provider-card" type="button" aria-label="Use GitHub Copilot">
+              <span class="provider-card__header">
+                <span class="provider-card__icon">
+                  <span class="provider-logo provider-logo--github-copilot" aria-hidden="true"></span>
+                </span>
+                <span class="provider-card__name">GitHub Copilot</span>
+              </span>
+              <span class="provider-card__footer">
+                <span class="provider-card__description">Use the plan you<br />already have.</span>
+                <span class="provider-card__arrow" aria-hidden="true"></span>
+              </span>
+            </button>
+
+            <button class="provider-card" type="button" aria-label="Select ChatGPT">
+              <span class="provider-card__header">
+                <span class="provider-card__icon">
+                  <span class="provider-logo provider-logo--openai" aria-hidden="true"></span>
+                </span>
+                <span class="provider-card__name">ChatGPT</span>
+              </span>
+              <span class="provider-card__footer">
+                <span class="provider-card__description">Sign in with your<br />subscription.</span>
+                <span class="provider-card__arrow" aria-hidden="true"></span>
+              </span>
+            </button>
+
+            <button class="provider-card" type="button" aria-label="Select Microsoft 365 Copilot">
+              <span class="provider-card__header">
+                <span class="provider-card__icon">
+                  <span class="provider-logo provider-logo--microsoft" aria-hidden="true"></span>
+                </span>
+                <span class="provider-card__name">Microsoft 365 Copilot</span>
+              </span>
+              <span class="provider-card__footer">
+                <span class="provider-card__description">Support is coming<br />soon.</span>
+                <span class="provider-card__arrow" aria-hidden="true"></span>
+              </span>
+            </button>
+
+            <button class="provider-card" type="button" aria-label="Bring your own key">
+              <span class="provider-card__header">
+                <span class="provider-card__icon">
+                  <span class="codicon codicon-key" aria-hidden="true"></span>
+                </span>
+                <span class="provider-card__name">Bring your own key</span>
+              </span>
+              <span class="provider-card__footer">
+                <span class="provider-card__description">Connect your own API<br />key.</span>
+                <span class="provider-card__arrow" aria-hidden="true"></span>
+              </span>
+            </button>
+
+            <button class="provider-card" type="button" aria-label="Select no AI">
+              <span class="provider-card__header">
+                <span class="provider-card__icon">
+                  <span class="codicon codicon-code" aria-hidden="true"></span>
+                </span>
+                <span class="provider-card__name">No AI</span>
+              </span>
+              <span class="provider-card__footer">
+                <span class="provider-card__description">No account or key<br />needed.</span>
+                <span class="provider-card__arrow" aria-hidden="true"></span>
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <div class="carousel__controls-row" role="group" aria-label="Carousel controls">
+          <div class="carousel__pagination" aria-label="Choose a provider">
+            <button class="pagination-dot" type="button" aria-label="Provider 1" aria-current="true"></button>
+            <button class="pagination-dot" type="button" aria-label="Provider 2"></button>
+            <button class="pagination-dot" type="button" aria-label="Provider 3"></button>
+            <button class="pagination-dot" type="button" aria-label="Provider 4"></button>
+            <button class="pagination-dot" type="button" aria-label="Provider 5"></button>
+          </div>
+          <button class="autoplay-toggle" type="button" aria-label="Stop autoplay" aria-pressed="false">
+            <span class="codicon autoplay-toggle__icon" aria-hidden="true"></span>
+          </button>
+        </div>
+        <p class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+      </section>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
+</html>
