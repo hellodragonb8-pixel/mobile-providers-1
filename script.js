@@ -27,7 +27,7 @@ function updateThemeToggle() {
   document.querySelector('meta[name="theme-color"]:not([media])')?.remove();
   const themeColor = document.createElement("meta");
   themeColor.name = "theme-color";
-  themeColor.content = currentTheme === "light" ? "#f9fbfd" : "#0c0e0f";
+  themeColor.content = currentTheme === "light" ? "#f9f8fd" : "#0c0e0f";
   document.head.append(themeColor);
   themeToggle.setAttribute("aria-label", label);
   themeToggleLabel.textContent = label;
