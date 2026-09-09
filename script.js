@@ -47,6 +47,7 @@ function createClone(card) {
   clone.className = card.className;
   clone.innerHTML = card.innerHTML;
   clone.setAttribute("aria-hidden", "true");
+  clone.inert = true;
   return clone;
 }
 
